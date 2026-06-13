@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Suporte TÉCNICO - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#54647a",
+                    "surface-tint": "#545f73",
+                    "surface-container-low": "#f5f3f4",
+                    "tertiary-fixed-dim": "#ddc39d",
+                    "inverse-on-surface": "#f3f0f2",
+                    "secondary": "#505f76",
+                    "tertiary-fixed": "#fadfb8",
+                    "surface-dim": "#dcd9db",
+                    "outline": "#75777d",
+                    "primary-fixed-dim": "#bcc7de",
+                    "on-tertiary-fixed": "#271902",
+                    "tertiary": "#1e1200",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#303032",
+                    "inverse-primary": "#bcc7de",
+                    "surface-variant": "#e4e2e3",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "primary-container": "#1e293b",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary": "#091426",
+                    "background": "#fbf8fa",
+                    "on-primary-fixed": "#111c2d",
+                    "surface-container": "#f0edef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#45474c",
+                    "surface-container-high": "#eae7e9",
+                    "primary-fixed": "#d8e3fb",
+                    "secondary-container": "#d0e1fb",
+                    "on-tertiary-fixed-variant": "#564427",
+                    "outline-variant": "#c5c6cd",
+                    "on-tertiary-container": "#a38c6a",
+                    "surface": "#fbf8fa",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-container": "#8590a6",
+                    "tertiary-container": "#35260c",
+                    "surface-bright": "#fbf8fa",
+                    "on-surface": "#1b1b1d",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-background": "#1b1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "container-margin": "24px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "data-mono": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "title-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "data-mono": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background: rgba(251, 248, 250, 0.9);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-outline-variant h-16 px-gutter flex items-center justify-between">
+<div class="flex items-center gap-3 flex-1 mr-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-2 font-body-sm focus:ring-2 focus:ring-primary-container outline-none transition-all" placeholder="Buscar chamados..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-1 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-background"></span>
+</button>
+<img class="w-9 h-9 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a technical support engineer in a corporate environment. The lighting is soft and professional, using high-key studio lighting with a neutral, clean background. The individual wears a smart casual navy blue shirt, reflecting the professional navy blue brand identity. The overall image has a sharp, modern minimalist aesthetic consistent with technical enterprise software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhCeYvZAu5yaJCcx7rzzl7QW1MGt70kev60miaenC9yFmj_C5ilSLFSZbU7osxdCqTikSbBxQeCDZUdMQz-trh60vaKCqpQLKszGophMWq1HuvhNUlud17n_TmXXK7qbTa022DT43UIi0YOdsYLbMKPuqOGnKYlhoMk-k2Rg8nBthhRwGJtwXj1J6FbEQwYt9dezdg1i8-P0J-zkhlCiBMEcY1W_RZQbVM4-sNKnMBg2I6Am6PFFwkxzqyIXigFNTx7sL_4A4KoH8"/>
+</div>
+</header>
+<main class="pt-20 pb-24 px-gutter max-w-md mx-auto overflow-x-hidden">
+<!-- Welcome Section -->
+<section class="mb-lg">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Painel de Controle</h1>
+<p class="font-body-sm text-on-surface-variant">Bem-vindo, Suporte Nível 1</p>
+</section>
+<!-- Status Summary (Horizontal Scroll) -->
+<section class="mb-lg -mx-gutter overflow-x-auto no-scrollbar flex gap-sm px-gutter">
+<div class="min-w-[140px] p-md bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col gap-xs shrink-0">
+<span class="text-primary font-title-sm text-title-sm">12</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Chamados Abertos</span>
+</div>
+<div class="min-w-[140px] p-md bg-secondary-container border border-outline-variant rounded-xl flex flex-col gap-xs shrink-0">
+<span class="text-on-secondary-container font-title-sm text-title-sm">5</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container uppercase">Em Atendimento</span>
+</div>
+<div class="min-w-[140px] p-md bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col gap-xs shrink-0">
+<span class="text-tertiary-container font-title-sm text-title-sm">3</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Aguardando Peças</span>
+</div>
+<div class="min-w-[140px] p-md bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col gap-xs shrink-0">
+<span class="text-on-secondary-fixed-variant font-title-sm text-title-sm">8</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Concluídos Hoje</span>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="mb-md">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Categorias</h2>
+<button class="text-primary font-label-caps text-label-caps uppercase">Ver Todas</button>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar -mx-gutter px-gutter">
+<button class="px-4 py-1.5 bg-primary-container text-on-primary rounded-full font-body-sm whitespace-nowrap">Informática/TI</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-body-sm border border-outline-variant whitespace-nowrap">Elétrica</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-body-sm border border-outline-variant whitespace-nowrap">Predial/Civil</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-body-sm border border-outline-variant whitespace-nowrap">Segurança</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-body-sm border border-outline-variant whitespace-nowrap">Telecom</button>
+</div>
+</section>
+<!-- Ticket List (Main Content) -->
+<section class="space-y-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-xs">Atividades Recentes</h2>
+<!-- Ticket 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-data-mono text-data-mono text-on-surface-variant mb-1">ID #1024</span>
+<h3 class="font-title-sm text-title-sm text-primary">Falha no Servidor</h3>
+</div>
+<span class="px-2 py-1 bg-error-container text-on-error-container font-label-caps text-label-caps rounded uppercase">Crítica</span>
+</div>
+<div class="flex gap-2 items-center text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">computer</span>
+<span class="text-on-surface-variant">TI</span>
+<span class="mx-1 text-outline">•</span>
+<span class="flex items-center gap-1 text-primary-container font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                        Em Progresso
+                    </span>
+</div>
+<div class="flex gap-2 pt-xs border-t border-surface-container-low">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-label-caps text-label-caps uppercase hover:bg-outline-variant transition-colors">Ver Detalhes</button>
+<button class="flex-1 py-2 bg-primary-container text-on-primary rounded-lg font-label-caps text-label-caps uppercase hover:opacity-90 transition-opacity">Atribuir</button>
+</div>
+</div>
+<!-- Ticket 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-data-mono text-data-mono text-on-surface-variant mb-1">ID #1025</span>
+<h3 class="font-title-sm text-title-sm text-primary">Troca de Lâmpadas Hall</h3>
+</div>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps rounded uppercase">Baixa</span>
+</div>
+<div class="flex gap-2 items-center text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">electrical_services</span>
+<span class="text-on-surface-variant">Elétrica</span>
+<span class="mx-1 text-outline">•</span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                        Pendente
+                    </span>
+</div>
+<div class="flex gap-2 pt-xs border-t border-surface-container-low">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-label-caps text-label-caps uppercase">Ver Detalhes</button>
+<button class="flex-1 py-2 bg-primary-container text-on-primary rounded-lg font-label-caps text-label-caps uppercase">Atribuir</button>
+</div>
+</div>
+<!-- Ticket 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-data-mono text-data-mono text-on-surface-variant mb-1">ID #1026</span>
+<h3 class="font-title-sm text-title-sm text-primary">Manutenção AC Sala 4</h3>
+</div>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps rounded uppercase">Alta</span>
+</div>
+<div class="flex gap-2 items-center text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">domain</span>
+<span class="text-on-surface-variant">Predial</span>
+<span class="mx-1 text-outline">•</span>
+<span class="flex items-center gap-1 text-secondary">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                        Validando
+                    </span>
+</div>
+<div class="flex gap-2 pt-xs border-t border-surface-container-low">
+<button class="flex-1 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-label-caps text-label-caps uppercase">Ver Detalhes</button>
+<button class="flex-1 py-2 bg-primary-container text-on-primary rounded-lg font-label-caps text-label-caps uppercase">Atribuir</button>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-20 right-gutter bg-primary-container text-on-primary h-14 pl-4 pr-6 rounded-full shadow-lg flex items-center gap-2 z-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Novo Chamado</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container border-t border-outline-variant flex justify-around items-center h-16 w-full px-xs">
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform scale-95">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px] mt-0.5">Início</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-caps text-[10px] mt-0.5">Chamados</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-caps text-[10px] mt-0.5">Relatórios</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-[10px] mt-0.5">Ajustes</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for the FAB on scroll
+        let lastScroll = 0;
+        const fab = document.querySelector('button.fixed.bottom-20');
+        const fabLabel = fab.querySelector('span:last-child');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                // Scroll down - collapse
+                fab.classList.remove('pr-6', 'pl-4');
+                fab.classList.add('w-14', 'justify-center', 'p-0');
+                fabLabel.classList.add('hidden');
+            } else {
+                // Scroll up - expand
+                fab.classList.add('pr-6', 'pl-4');
+                fab.classList.remove('w-14', 'justify-center', 'p-0');
+                fabLabel.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>
