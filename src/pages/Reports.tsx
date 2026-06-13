@@ -110,7 +110,8 @@ export function Reports() {
                   outerRadius={100}
                   paddingAngle={5}
                   dataKey="value"
-                  label={({ name, percent }) => percent > 0 ? `${name} ${(percent * 100).toFixed(0)}%` : ''}
+                  label={({ name, percent }) => percent !== undefined && percent > 0 ? `${name} ${(percent * 100).toFixed(0)}%` : ''}
+
                 >
                   {statusData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
